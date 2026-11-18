@@ -6,6 +6,8 @@ Drop in a bank or credit card CSV. Leaky finds every recurring charge, catches p
 
 **[Live demo →](https://claude.ai/artifact/WwWcRmjAibCJ5ETSc1mbR7)** (opens with a sample statement loaded; `public/sample-statement.csv` is the same data as a real file to try the upload flow)
 
+**[Demo video (1:07)](docs/leaky-demo.mp4)** · [script & shot list](demo/SCRIPT.md)
+
 ![Leaky: hero with receipt](docs/hero.png)
 ![Leaky: findings and cancel simulator](docs/findings.png)
 
@@ -60,6 +62,7 @@ src/
   App.tsx         state + layout
 tests/            vitest suites
 scripts/          demo build + sample CSV writer
+demo/             scripted, reproducible demo video (Playwright + ffmpeg)
 ```
 
 ## Run it

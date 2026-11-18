@@ -1,0 +1,43 @@
+1
+00:00:00,400 --> 00:00:05,600
+This is two years of my bank account. 1,272 payments.
+
+2
+00:00:05,800 --> 00:00:10,600
+Somewhere in here are subscriptions I forgot I was paying for.
+
+3
+00:00:10,800 --> 00:00:14,800
+Finding them by hand? Not happening.
+
+4
+00:00:15,400 --> 00:00:19,600
+So I built Leaky. Drop in a statement export…
+
+5
+00:00:19,800 --> 00:00:24,600
+…and it prints every subscription on a receipt. In under a second.
+
+6
+00:00:25,000 --> 00:00:30,400
+$3,211 a year. That’s 182 hours of work at my wage.
+
+7
+00:00:30,800 --> 00:00:39,600
+It catches what I’d never notice: two price hikes and a double charge.
+
+8
+00:00:40,000 --> 00:00:45,600
+Three video apps and two AI chatbots? Time to cut a few.
+
+9
+00:00:46,000 --> 00:00:52,600
+Invest that instead: $38,867 in 25 years.
+
+10
+00:00:53,000 --> 00:00:59,600
+And I get a receipt worth sharing.
+
+11
+00:01:00,200 --> 00:01:06,600
+Leaky runs entirely in your browser. Nothing gets uploaded. Try it with your own statement, link below.
