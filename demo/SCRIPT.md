@@ -4,13 +4,13 @@
 **Audience:** students and early-career people who pay for a pile of apps and never check their statements. Secondary audience: admissions readers and recruiters watching a portfolio.
 **Story:** *I couldn't see my own subscriptions → I built a tool → it found $3,211/yr and things I'd never have caught → here's my receipt.*
 
-**Rendered cut:** `demo/out/leaky-demo.mp4` (1920×1080, 30 fps, silent with burned-in captions). `leaky-demo.srt` holds the voiceover lines with exact timings. Re-shoot any time with `npm run demo && node demo/record.cjs && bash demo/render.sh`.
+**Rendered cut:** `demo/out/leaky-demo.mp4` (1920×1080, 30 fps, AI voiceover, no on-screen captions; `CAPTIONS=on node demo/record.cjs` burns them back in). `leaky-demo.srt` holds the voiceover lines with exact timings. Re-shoot any time with `npm run demo && node demo/record.cjs && bash demo/render.sh && python3 demo/voiceover.py`.
 
 ## Continuity: what must stay the same in every shot
 
 - **One dataset throughout:** the 2-year sample statement (1,272 payments). Every number on screen comes from it: $3,211/yr, 182 h, +11% Rogers, +16% Netflix, Spotify double charge, $38,867 at 25 yrs.
 - **One frame:** 1920×1080 browser capture, light theme, no browser chrome, no scrollbar, UI at 150% so text reads on a phone.
-- **One caption style:** ink pill, bottom centre, yellow highlighter on the key phrase. The yellow is the brand colour and only ever marks money.
+- **Yellow only ever marks money** (highlighter on the statement, receipt total, simulator ring).
 - **Wage stays $17.60/hr** (Ontario minimum wage) so the "hours of work" figure never changes between shots.
 - **Camera moves:** slow push-ins (1.1–1.4 s, ease in-out), always reset before the next scroll. No whip pans, no cuts mid-move.
 - **Skipped on purpose:** the file picker dialog, waiting time, every repeated click past the third toggle.
@@ -39,7 +39,7 @@
 1. Open `leaky-demo.mp4` muted in any editor (CapCut, iMovie, DaVinci Resolve) and import `leaky-demo.srt` as subtitles. Each line starts exactly when it should be spoken.
 2. Record each line separately, phone 15–20 cm from your mouth in a carpeted room. Read it as if you're telling a friend, not presenting.
 3. Drop each clip at its subtitle's start time. Lines are written to fit with about 0.5 s to spare at a natural pace.
-4. Optional: lo-fi or minimal electronic bed at −24 dB, ducked under the voice. Keep the caption burn-in. Most people watch on mute.
+4. Optional: lo-fi or minimal electronic bed at −24 dB, ducked under the voice. For muted autoplay feeds, upload `leaky-demo.srt` as closed captions instead of burning them in.
 
 ## Cut-downs
 

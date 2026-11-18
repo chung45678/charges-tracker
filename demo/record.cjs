@@ -28,6 +28,9 @@ const CAPTIONS = [
   [53.0, 59.6, 'And I get a *receipt worth sharing.*'],
 ];
 
+// On-screen captions are off by default (the voiceover carries the words). CAPTIONS=on to burn them in.
+const SHOW_CAPTIONS = process.env.CAPTIONS === 'on';
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 (async () => {
@@ -62,9 +65,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const captionLoop = (async () => {
     for (const [start, end, text] of CAPTIONS) {
       await at(start);
-      await D('caption', text === '{{INVEST}}' ? investText : text);
+      if (SHOW_CAPTIONS) await D('caption', text === '{{INVEST}}' ? investText : text);
       await at(end);
-      await D('caption', null);
+      if (SHOW_CAPTIONS) await D('caption', null);
     }
   })();
 
