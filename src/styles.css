@@ -1,5 +1,5 @@
 /* Layout: a highlighter pass over a bank statement. Statement-paper ground, ink text,
-   yellow highlighter on the money that matters, red ink for leaks, mono for every figure. */
+   yellow highlighter on the money that matters, red ink for problems, mono for every figure. */
 :root {
   --paper: #f3f5f8;
   --surface: #ffffff;
@@ -9,8 +9,8 @@
   --line: #d8dce3;
   --highlight: #ffe14d;
   --on-highlight: #14161b;
-  --leak: #c8213a;
-  --leak-soft: #fbe6e9;
+  --danger: #c8213a;
+  --danger-soft: #fbe6e9;
   --warn: #a35a00;
   --warn-soft: #fbefdc;
   --ok: #1d7d53;
@@ -44,8 +44,8 @@
     --line: #2a2f38;
     --highlight: #ffe14d;
     --on-highlight: #14161b;
-    --leak: #ff6b7d;
-    --leak-soft: #3a1b21;
+    --danger: #ff6b7d;
+    --danger-soft: #3a1b21;
     --warn: #f2b560;
     --warn-soft: #3a2c17;
     --ok: #4fd39a;
@@ -67,8 +67,8 @@
   --line: #2a2f38;
   --highlight: #ffe14d;
   --on-highlight: #14161b;
-  --leak: #ff6b7d;
-  --leak-soft: #3a1b21;
+  --danger: #ff6b7d;
+  --danger-soft: #3a1b21;
   --warn: #f2b560;
   --warn-soft: #3a2c17;
   --ok: #4fd39a;
@@ -329,8 +329,8 @@ input {
   font-size: inherit;
 }
 .error {
-  border: 1px solid var(--leak);
-  background: var(--leak-soft);
+  border: 1px solid var(--danger);
+  background: var(--danger-soft);
   color: var(--ink);
   border-radius: 8px;
   padding: 10px 14px;
@@ -519,7 +519,7 @@ input {
   border-radius: 0 3px 3px 0;
 }
 .finding.high .stripe {
-  background: var(--leak);
+  background: var(--danger);
 }
 .finding.medium .stripe {
   background: var(--warn);
@@ -557,8 +557,8 @@ input {
   vertical-align: 2px;
 }
 .sev.high {
-  background: var(--leak-soft);
-  color: var(--leak);
+  background: var(--danger-soft);
+  color: var(--danger);
 }
 .sev.medium {
   background: var(--warn-soft);
@@ -694,9 +694,9 @@ th.right {
   background: var(--sunken);
   color: var(--muted);
 }
-.chip.leak {
-  background: var(--leak-soft);
-  color: var(--leak);
+.chip.danger {
+  background: var(--danger-soft);
+  color: var(--danger);
 }
 .chip.warn {
   background: var(--warn-soft);
@@ -751,7 +751,7 @@ th.right {
   fill: var(--ink);
 }
 .spark .end.up {
-  fill: var(--leak);
+  fill: var(--danger);
 }
 .expand {
   background: none;
@@ -777,8 +777,8 @@ th.right {
   background: var(--surface);
 }
 .history-list span.dup {
-  border-color: var(--leak);
-  color: var(--leak);
+  border-color: var(--danger);
+  color: var(--danger);
 }
 .history-list span.trial {
   border-color: var(--warn);
@@ -814,7 +814,7 @@ th.right {
   fill: var(--ink);
 }
 .timeline .mark.big {
-  fill: var(--leak);
+  fill: var(--danger);
 }
 .timeline .lbl {
   fill: var(--ink);

@@ -1,11 +1,11 @@
 import type { Insight } from '../lib/detect';
 import { usd } from '../lib/format';
 
-const SEV_LABEL = { high: 'Leak', medium: 'Review', info: 'Heads up' } as const;
+const SEV_LABEL = { high: 'Fix', medium: 'Review', info: 'Heads up' } as const;
 
 export function Findings({ insights }: { insights: Insight[] }) {
   if (!insights.length) {
-    return <div className="empty">No leaks found. Your subscriptions look tidy.</div>;
+    return <div className="empty">Nothing to fix. Your subscriptions look tidy.</div>;
   }
   return (
     <div className="findings">

@@ -58,7 +58,7 @@ export async function renderReceiptPng(data: ReceiptData): Promise<string> {
     g.fillText('-'.repeat(46), 28, y);
   };
 
-  center('LEAKY', mono(26, 700));
+  center('SNIP', mono(26, 700));
   y += 22;
   center('SUBSCRIPTION AUDIT', mono(12, 500));
   y += 18;
@@ -103,6 +103,6 @@ export async function renderReceiptPng(data: ReceiptData): Promise<string> {
   center('RECURRING BUSINESS', mono(12));
   y += 22;
   g.fillStyle = '#5D6472';
-  center('made with leaky · runs in your browser', mono(10));
+  center('made with snip · runs in your browser', mono(10));
   return c.toDataURL('image/png');
 }

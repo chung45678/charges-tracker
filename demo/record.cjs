@@ -1,9 +1,9 @@
-// Records the Leaky product demo video by driving the real app in Chromium.
+// Records the Snip product demo video by driving the real app in Chromium.
 // Every scene is pinned to a timecode from demo/SCRIPT.md so captions and voiceover line up.
 //
 //   npm run demo                      # builds dist-single/index.html
 //   node demo/record.cjs              # writes demo/out/raw.webm + timing.json
-//   bash demo/render.sh               # trims, encodes demo/out/leaky-demo.mp4 (+ .srt)
+//   bash demo/render.sh               # trims, encodes demo/out/snip-demo.mp4 (+ .srt)
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
@@ -19,7 +19,7 @@ const CAPTIONS = [
   [0.4, 5.6, 'This is two years of my bank account. *1,272 payments.*'],
   [5.8, 10.6, 'Somewhere in here are subscriptions I *forgot I was paying for.*'],
   [10.8, 14.8, 'Finding them by hand? *Not happening.*'],
-  [15.4, 19.6, 'So I built *Leaky.* Drop in a statement export…'],
+  [15.4, 19.6, 'So I built *Snip.* Drop in a statement export…'],
   [19.8, 24.6, '…and it prints every subscription on a *receipt.* In under a second.'],
   [25.0, 30.4, '*$3,211 a year.* That’s 182 hours of work at my wage.'],
   [30.8, 39.6, 'It catches what I’d never notice: *two price hikes* and a *double charge.*'],
@@ -103,7 +103,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await at(30.0);
   await D('cameraReset', 900);
 
-  // ── 4 · The leaks (0:31–0:40) ───────────────────────────────────
+  // ── 4 · The problems (0:31–0:40) ───────────────────────────────────
   await D('scrollTo', '.findings', 0.16, 1100);
   await at(32.3);
   await D('camera', ['.finding:nth-child(1)', '.finding:nth-child(3)'], 1.45, 1300);

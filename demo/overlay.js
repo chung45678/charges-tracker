@@ -198,9 +198,9 @@
         'div',
         'demo-end',
         `<div class="end-inner">
-          <svg viewBox="0 0 32 32" width="72" height="72"><path d="M16 3C16 3 6 15 6 21a10 10 0 0 0 20 0C26 15 16 3 16 3z" fill="#FFE14D" stroke="#14161B" stroke-width="2.2"/></svg>
-          <h1>Leaky</h1>
-          <p class="end-tag">Find the money <mark>leaking out</mark> of your account.</p>
+          <svg viewBox="0 0 32 32" width="72" height="72"><path d="M12.5 19.5L25 3.5M19.5 19.5L7 3.5" stroke="#F3F5F8" stroke-width="2.4" stroke-linecap="round"/><circle cx="9" cy="23.5" r="4.6" fill="#FFE14D" stroke="#F3F5F8" stroke-width="2.2"/><circle cx="23" cy="23.5" r="4.6" fill="#FFE14D" stroke="#F3F5F8" stroke-width="2.2"/></svg>
+          <h1>Snip</h1>
+          <p class="end-tag">Find the subscriptions <mark>worth cutting.</mark></p>
           <p class="end-meta">Free · runs in your browser · nothing is uploaded</p>
           <p class="end-url">github.com/chung45678/Portfolio-project</p>
         </div>`,

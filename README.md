@@ -1,15 +1,15 @@
-# Leaky
+# Snip
 
-**Find the money leaking out of your account every month.**
+**Find the subscriptions worth cutting.**
 
-Drop in a bank or credit card CSV. Leaky finds every recurring charge, catches price hikes, double charges and trials that quietly converted, shows what cutting them is worth, and prints a shareable "receipt" of your subscriptions. Everything runs in the browser: no bank login, no server, no sign-up.
+Drop in a bank or credit card CSV. Snip finds every recurring charge, catches price hikes, double charges and trials that quietly converted, shows what cutting them is worth, and prints a shareable "receipt" of your subscriptions. Everything runs in the browser: no bank login, no server, no sign-up.
 
 **[Live demo →](https://claude.ai/artifact/WwWcRmjAibCJ5ETSc1mbR7)** (opens with a sample statement loaded; `public/sample-statement.csv` is the same data as a real file to try the upload flow)
 
-**[Demo video (1:07, with voiceover)](docs/leaky-demo.mp4)** · [script & shot list](demo/SCRIPT.md)
+**[Demo video (1:07, with voiceover)](docs/snip-demo.mp4)** · [script & shot list](demo/SCRIPT.md)
 
-![Leaky: hero with receipt](docs/hero.png)
-![Leaky: findings and cancel simulator](docs/findings.png)
+![Snip: hero with receipt](docs/hero.png)
+![Snip: findings and cancel simulator](docs/findings.png)
 
 ---
 
@@ -45,7 +45,7 @@ These are checked in the test suite (`tests/detect.test.ts → "the demo stateme
 2. **Normalize merchants** (`src/lib/merchants.ts`). `SQ *BLUE BOTTLE COFFEE #0423 SAN FRANCISCO CA` → `blue bottle coffee`. Strips processor prefixes (Square, Toast, PayPal, Google, Apple), store numbers, reference codes, phone numbers and embedded dates, then matches ~40 known services so `NETFLIX.COM 866-579-7172` and `Netflix Inc` land in one group.
 3. **Split by price** (`clusterByAmount`). One Apple descriptor can carry several plans, so each merchant is split into price clusters. Neighbours within 30% chain together, which keeps a $15.49 → $17.99 hike in one series.
 4. **Score the rhythm** (`fitCadence`). The median gap picks a candidate cadence (weekly, biweekly, monthly, quarterly, yearly), each with a drift window for weekends and 28–31-day months. A missed charge (double gap) counts as half a hit. Confidence = 55% timing + 30% price stability + 15% history length. Weekly/biweekly series need ≥92% price stability, which is what rejects grocery runs. Two-charge annual series need a near-identical price and a merchant that isn't mostly one-off purchases.
-5. **Find the leaks** (`findPriceChanges`, `buildInsights`). Price steps are measured against the last *settled* price so a one-month blip isn't a "hike". Same-amount charges within 3 days are double charges. A charge under 25% of the usual price one period before the series starts is a converted trial. Overlaps are active services in the same category.
+5. **Flag the problems** (`findPriceChanges`, `buildInsights`). Price steps are measured against the last *settled* price so a one-month blip isn't a "hike". Same-amount charges within 3 days are double charges. A charge under 25% of the usual price one period before the series starts is a converted trial. Overlaps are active services in the same category.
 
 ## Tech
 

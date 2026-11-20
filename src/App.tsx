@@ -74,8 +74,8 @@ export default function App() {
   const [source, setSource] = useState<Source>(loadSample);
   const [error, setError] = useState<string | null>(null);
   const [over, setOver] = useState(false);
-  const [hourlyWage, setHourlyWage] = useState<number>(() => store('leaky.wage', 17.6));
-  const [years, setYears] = useState<number>(() => store('leaky.years', 10));
+  const [hourlyWage, setHourlyWage] = useState<number>(() => store('snip.wage', 17.6));
+  const [years, setYears] = useState<number>(() => store('snip.years', 10));
   const [cancelled, setCancelled] = useState<Set<string>>(new Set());
   const [png, setPng] = useState<string | null>(null);
   const fileInput = useRef<HTMLInputElement>(null);
@@ -95,8 +95,8 @@ export default function App() {
     } else setCancelled(new Set());
   }, [source, subs]);
 
-  useEffect(() => save('leaky.wage', hourlyWage), [hourlyWage]);
-  useEffect(() => save('leaky.years', years), [years]);
+  useEffect(() => save('snip.wage', hourlyWage), [hourlyWage]);
+  useEffect(() => save('snip.years', years), [years]);
 
   const active = subs.filter((s) => s.active);
   const monthly = active.reduce((a, s) => a + s.monthly, 0);
@@ -105,8 +105,8 @@ export default function App() {
   const monthlySaved = cut.reduce((a, s) => a + s.monthly, 0);
   const invested = futureValue(monthlySaved, years, RATE);
   const hours = yearly / Math.max(1, hourlyWage);
-  const leaks = insights.filter((i) => i.severity === 'high');
-  const recoverable = leaks.reduce((a, i) => a + i.value, 0);
+  const urgent = insights.filter((i) => i.severity === 'high');
+  const recoverable = urgent.reduce((a, i) => a + i.value, 0);
   const next = upcomingTotal(subs, source.asOf, cancelled);
   const spend = source.transactions.reduce((a, t) => a + t.amount, 0);
   const spanDays = source.transactions.length ? source.transactions[source.transactions.length - 1].day - source.transactions[0].day + 1 : 1;
@@ -144,7 +144,7 @@ export default function App() {
   const downloadPng = async () => {
     if (!png) return;
     const blob = await (await fetch(png)).blob();
-    saveFile('leaky-receipt.png', blob);
+    saveFile('snip-receipt.png', blob);
   };
 
   return (
@@ -153,9 +153,9 @@ export default function App() {
         <div className="wrap">
           <div className="brand">
             <svg viewBox="0 0 32 32" aria-hidden="true">
-              <path d="M16 3C16 3 6 15 6 21a10 10 0 0 0 20 0C26 15 16 3 16 3z" fill="var(--highlight)" stroke="var(--ink)" strokeWidth="2.2" />
+              <path d="M12.5 19.5L25 3.5M19.5 19.5L7 3.5" stroke="var(--ink)" strokeWidth="2.4" strokeLinecap="round" /><circle cx="9" cy="23.5" r="4.6" fill="var(--highlight)" stroke="var(--ink)" strokeWidth="2.2" /><circle cx="23" cy="23.5" r="4.6" fill="var(--highlight)" stroke="var(--ink)" strokeWidth="2.2" />
             </svg>
-            Leaky
+            Snip
           </div>
           <div className="toplinks">
             <span className="pill">
@@ -174,10 +174,10 @@ export default function App() {
           <div>
             <div className="eyebrow">Subscription audit · from a bank CSV</div>
             <h1>
-              Find the money <span className="hl">leaking out</span> of your account every month.
+              Find the subscriptions <span className="hl">worth cutting.</span>
             </h1>
             <p className="lede">
-              Drop in a statement export. Leaky finds every recurring charge, catches price hikes and double charges, and shows what cutting
+              Drop in a statement export. Snip finds every recurring charge, catches price hikes and double charges, and shows what cutting
               them is worth. No bank login, no sign-up.
             </p>
             <div className="hero-actions">
@@ -241,7 +241,7 @@ export default function App() {
                 Save receipt as image
               </button>
               {!inArtifact && (
-              <button className="btn ghost" onClick={() => saveFile('leaky-renewals.ics', new Blob([buildIcs(subs.filter((s) => !cancelled.has(s.id)))], { type: 'text/calendar' }))}>
+              <button className="btn ghost" onClick={() => saveFile('snip-renewals.ics', new Blob([buildIcs(subs.filter((s) => !cancelled.has(s.id)))], { type: 'text/calendar' }))}>
                 Add renewals to calendar
               </button>
               )}
@@ -282,11 +282,11 @@ export default function App() {
               </div>
             </div>
             <div className="stat">
-              <div className="label">Leaks found</div>
-              <div className="value" style={{ color: leaks.length ? 'var(--leak)' : undefined }}>
-                {leaks.length}
+              <div className="label">Worth fixing</div>
+              <div className="value" style={{ color: urgent.length ? 'var(--danger)' : undefined }}>
+                {urgent.length}
               </div>
-              <div className="sub">{leaks.length ? `${usd(recoverable)} in hikes and refunds` : 'Nothing urgent'}</div>
+              <div className="sub">{urgent.length ? `${usd(recoverable)} in hikes and refunds` : 'Nothing urgent'}</div>
             </div>
           </div>
         </section>
@@ -350,7 +350,7 @@ export default function App() {
               </p>
             </div>
             <div>
-              <h3>Look for the leaks</h3>
+              <h3>Flag what’s worth cutting</h3>
               <p>
                 Within each series: price steps that stuck, same-amount charges within 3 days, a small first charge before full price,
                 overlapping services in one category, and annual renewals coming up in the next 60 days.
@@ -362,7 +362,7 @@ export default function App() {
 
       <footer>
         <div className="wrap">
-          <span>Leaky is a portfolio project. Not financial advice. Investment figures assume a fixed {Math.round(RATE * 100)}% annual return.</span>
+          <span>Snip is a portfolio project. Not financial advice. Investment figures assume a fixed {Math.round(RATE * 100)}% annual return.</span>
           <a href={REPO_URL} target="_blank" rel="noreferrer">
             View the code
           </a>
@@ -372,7 +372,7 @@ export default function App() {
       {png && (
         <div className="modal-back" onClick={() => setPng(null)}>
           <div className="modal" role="dialog" aria-modal="true" aria-label="Receipt image" onClick={(e) => e.stopPropagation()}>
-            <img src={png} alt="Your Leaky subscription receipt" />
+            <img src={png} alt="Your Snip subscription receipt" />
             <p>Right-click or long-press the image to save or share it, or use Download. Only subscriptions you kept are printed.</p>
             <div className="modal-actions">
               <button className="btn ghost" onClick={() => setPng(null)}>

@@ -20,7 +20,7 @@ export function Receipt({ subs, cancelled, asOf, hourlyWage, invested, years }: 
   return (
     <div className="receipt" role="img" aria-label={`Receipt: ${kept.length} subscriptions costing ${usd(yearly)} per year`}>
       <div className="r-head">
-        <b>LEAKY</b>
+        <b>SNIP</b>
         <span>SUBSCRIPTION AUDIT</span>
         <span>{formatDay(asOf, { month: 'short', day: '2-digit', year: 'numeric' }).toUpperCase()}</span>
       </div>

@@ -75,8 +75,8 @@ export function SubTable({ subs, cancelled, toggle }: Props) {
                       </div>
                     </button>
                     <div className="chips">
-                      {hike && <span className="chip leak">+{Math.round(((hike.to - hike.from) / hike.from) * 100)}% price</span>}
-                      {s.duplicates.length > 0 && <span className="chip leak">Double charge</span>}
+                      {hike && <span className="chip danger">+{Math.round(((hike.to - hike.from) / hike.from) * 100)}% price</span>}
+                      {s.duplicates.length > 0 && <span className="chip danger">Double charge</span>}
                       {s.trialConverted && <span className="chip warn">Trial converted</span>}
                     </div>
                   </td>
