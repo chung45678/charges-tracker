@@ -1,6 +1,6 @@
-# Snip: 67-second demo script & shot list
+# snip: 67-second demo script & shot list
 
-**Project:** Snip, a browser-based web app that finds forgotten subscriptions, price hikes and double charges in a bank statement CSV.
+**Project:** snip, a browser-based web app that finds forgotten subscriptions, price hikes and double charges in a bank statement CSV.
 **Audience:** students and early-career people who pay for a pile of apps and never check their statements. Secondary audience: admissions readers and recruiters watching a portfolio.
 **Story:** *I couldn't see my own subscriptions → I built a tool → it found $3,211/yr and things I'd never have caught → here's my receipt.*
 
@@ -24,7 +24,7 @@
 | 0:05–0:10 | Scroll continues through near-identical rows. A Spotify and a Disney+ charge slide past, unmarked. | Same static frame; the slow scroll *is* the motion. | "Somewhere in here are subscriptions I forgot I was paying for." |
 | 0:10–0:15 | Every subscription row snaps to highlighter yellow, nearest first, until the screen is striped. | Same frame. The yellow wave is the beat. | "Finding them by hand? Not happening." |
 | **2 · LIVE SOLUTION & AHA** | | | |
-| 0:15–0:19 | **Hard cut** to Snip's landing page, results area empty. Cursor glides to **Choose file** and clicks (ripple). File dialog skipped. | Full-width capture, static. Cursor travel ≈0.65 s. | "So I built Snip. Drop in a statement export…" |
+| 0:15–0:19 | **Hard cut** to snip's landing page, results area empty. Cursor glides to **Choose file** and clicks (ripple). File dialog skipped. | Full-width capture, static. Cursor travel ≈0.65 s. | "So I built snip. Drop in a statement export…" |
 | 0:19–0:25 | Receipt **prints** top to bottom beside the headline. At 0:21, push in on the yellow **TOTAL PER YEAR $3,210.64** line. | Static for the print, then slow push-in (1.7×, 1.3 s) centred on the total. | "…and it prints every subscription on a receipt. In under a second." |
 | 0:25–0:31 | Pull back, scroll to the summary row, push in on **PER YEAR $3,211** next to **182 h** of work. | Smooth scroll (1 s), then push-in (1.9×) on the two stats. | "$3,211 a year. That's 182 hours of work at my wage." |
 | 0:31–0:40 | Scroll to **What to act on**. The first three cards get a yellow ring one after another: Rogers +11%, Netflix +16%, Spotify double charge. | Push-in (1.45×) framing exactly cards 1–3. Hold while each ring lands about 1.4 s apart. | "It catches what I'd never notice: two price hikes and a double charge." |
@@ -32,7 +32,7 @@
 | 0:46–0:53 | Scroll up to **Cancel simulator** ($575.76/yr cut). Time-horizon slider runs 10 → 25 years. Green curve climbs and the figure rolls up to **$38,867**. | Push-in (1.45×) on the simulator card; slider animates for 2.6 s inside the hold. | "Invest that instead: $38,867 in 25 years." |
 | **3 · OUTCOME & CTA** | | | |
 | 0:53–1:00 | Scroll to top: receipt now shows cut items struck through. Cursor clicks **Save receipt as image** and the PNG preview pops up. | Smooth scroll to top, static wide. Modal is the final product shot. | "And I get a receipt worth sharing." |
-| 1:00–1:07 | **End card:** scissors logo, "Snip", "Find the subscriptions *worth cutting.*", "Free · runs in your browser · nothing is uploaded", repo URL. Fade to black at 1:06. | Full-frame card, 0.6 s fade-in, held. | "Snip runs entirely in your browser. Nothing gets uploaded. Try it with your own statement, link below." |
+| 1:00–1:07 | **End card:** scissors logo, "snip", "Find the subscriptions *worth cutting.*", "Free · runs in your browser · nothing is uploaded", repo URL. Fade to black at 1:06. | Full-frame card, 0.6 s fade-in, held. | "snip runs entirely in your browser. Nothing gets uploaded. Try it with your own statement, link below." |
 
 ## Recording the voiceover
 

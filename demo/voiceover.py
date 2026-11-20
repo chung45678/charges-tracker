@@ -13,14 +13,14 @@ LINES = [
  (0.4, 5.6, "This is two years of my bank account. Twelve hundred and seventy-two payments."),
  (5.8, 10.6, "Somewhere in here are subscriptions I forgot I was paying for."),
  (10.8, 14.8, "Finding them by hand? Not happening."),
- (15.4, 19.6, "So I built Snip. Drop in a statement export..."),
+ (15.4, 19.6, "So I built snip. Drop in a statement export..."),
  (19.8, 24.6, "and it prints every subscription on a receipt. In under a second."),
  (25.0, 30.4, "Thirty-two hundred dollars a year. That's a hundred and eighty-two hours of work at my wage."),
  (30.8, 39.6, "And it catches what I'd never notice. Two price hikes, and a double charge."),
  (40.0, 45.6, "Three video apps, and two AI chatbots? Time to cut a few."),
  (46.0, 52.6, "Invest that instead, and it's almost thirty-nine thousand dollars in twenty-five years."),
  (53.0, 59.6, "And I get a receipt worth sharing."),
- (60.2, 66.6, "Snip runs entirely in your browser. Nothing gets uploaded. Try it with your own statement. Link below."),
+ (60.2, 66.6, "snip runs entirely in your browser. Nothing gets uploaded. Try it with your own statement. Link below."),
 ]
 out = []
 for i, (s, e, text) in enumerate(LINES):

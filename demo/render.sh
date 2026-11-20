@@ -16,7 +16,7 @@ node -e '
 const { captions } = require("./timing.json");
 const ts = (s) => { const ms = Math.round(s * 1000); const p = (n, w = 2) => String(n).padStart(w, "0");
   return `${p(Math.floor(ms / 3600000))}:${p(Math.floor(ms / 60000) % 60)}:${p(Math.floor(ms / 1000) % 60)},${p(ms % 1000, 3)}`; };
-const vo = [[60.2, 66.6, "Snip runs entirely in your browser. Nothing gets uploaded. Try it with your own statement, link below."]];
+const vo = [[60.2, 66.6, "snip runs entirely in your browser. Nothing gets uploaded. Try it with your own statement, link below."]];
 const all = [...captions, ...vo];
 require("fs").writeFileSync("snip-demo.srt", all.map(([s, e, t], i) => `${i + 1}\n${ts(s)} --> ${ts(e)}\n${t}\n`).join("\n"));
 '

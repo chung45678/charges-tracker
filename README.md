@@ -1,15 +1,15 @@
-# Snip
+# snip
 
 **Find the subscriptions worth cutting.**
 
-Drop in a bank or credit card CSV. Snip finds every recurring charge, catches price hikes, double charges and trials that quietly converted, shows what cutting them is worth, and prints a shareable "receipt" of your subscriptions. Everything runs in the browser: no bank login, no server, no sign-up.
+Drop in a bank or credit card CSV. snip finds every recurring charge, catches price hikes, double charges and trials that quietly converted, shows what cutting them is worth, and prints a shareable "receipt" of your subscriptions. Everything runs in the browser: no bank login, no server, no sign-up.
 
 **[Live demo →](https://claude.ai/artifact/WwWcRmjAibCJ5ETSc1mbR7)** (opens with a sample statement loaded; `public/sample-statement.csv` is the same data as a real file to try the upload flow)
 
 **[Demo video (1:07, with voiceover)](docs/snip-demo.mp4)** · [script & shot list](demo/SCRIPT.md)
 
-![Snip: hero with receipt](docs/hero.png)
-![Snip: findings and cancel simulator](docs/findings.png)
+![snip: hero with receipt](docs/hero.png)
+![snip: findings and cancel simulator](docs/findings.png)
 
 ---
 

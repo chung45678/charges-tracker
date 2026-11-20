@@ -13,7 +13,7 @@ import { Simulator } from './components/Simulator';
 import { SubTable } from './components/SubTable';
 import { Upcoming, upcomingTotal } from './components/Upcoming';
 
-const REPO_URL = 'https://github.com/chung45678/Portfolio-project';
+const REPO_URL = 'https://github.com/chung45678/snip';
 const RATE = 0.07;
 
 interface Source {
@@ -155,7 +155,7 @@ export default function App() {
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path d="M12.5 19.5L25 3.5M19.5 19.5L7 3.5" stroke="var(--ink)" strokeWidth="2.4" strokeLinecap="round" /><circle cx="9" cy="23.5" r="4.6" fill="var(--highlight)" stroke="var(--ink)" strokeWidth="2.2" /><circle cx="23" cy="23.5" r="4.6" fill="var(--highlight)" stroke="var(--ink)" strokeWidth="2.2" />
             </svg>
-            Snip
+            snip
           </div>
           <div className="toplinks">
             <span className="pill">
@@ -177,7 +177,7 @@ export default function App() {
               Find the subscriptions <span className="hl">worth cutting.</span>
             </h1>
             <p className="lede">
-              Drop in a statement export. Snip finds every recurring charge, catches price hikes and double charges, and shows what cutting
+              Drop in a statement export. snip finds every recurring charge, catches price hikes and double charges, and shows what cutting
               them is worth. No bank login, no sign-up.
             </p>
             <div className="hero-actions">
@@ -362,7 +362,7 @@ export default function App() {
 
       <footer>
         <div className="wrap">
-          <span>Snip is a portfolio project. Not financial advice. Investment figures assume a fixed {Math.round(RATE * 100)}% annual return.</span>
+          <span>snip is a portfolio project. Not financial advice. Investment figures assume a fixed {Math.round(RATE * 100)}% annual return.</span>
           <a href={REPO_URL} target="_blank" rel="noreferrer">
             View the code
           </a>
@@ -372,7 +372,7 @@ export default function App() {
       {png && (
         <div className="modal-back" onClick={() => setPng(null)}>
           <div className="modal" role="dialog" aria-modal="true" aria-label="Receipt image" onClick={(e) => e.stopPropagation()}>
-            <img src={png} alt="Your Snip subscription receipt" />
+            <img src={png} alt="Your snip subscription receipt" />
             <p>Right-click or long-press the image to save or share it, or use Download. Only subscriptions you kept are printed.</p>
             <div className="modal-actions">
               <button className="btn ghost" onClick={() => setPng(null)}>

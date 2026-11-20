@@ -58,7 +58,7 @@ export async function renderReceiptPng(data: ReceiptData): Promise<string> {
     g.fillText('-'.repeat(46), 28, y);
   };
 
-  center('SNIP', mono(26, 700));
+  center('snip', mono(26, 700));
   y += 22;
   center('SUBSCRIPTION AUDIT', mono(12, 500));
   y += 18;
